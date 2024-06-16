@@ -29,9 +29,13 @@ characters
 -   height
 -   gender
 -   picture
-    movies
+
+movies
+
 -   id
 -   name
-    movies_characters
+
+movies_characters
+
 -   movie_id
 -   character_id
