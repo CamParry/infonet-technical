@@ -15,22 +15,23 @@ https://swapi.dev/api/films
 
 GET / - list characters (with search and delete functionality)
 GET /character/{characterId}/edit - edit character
-POST /character/{characterId}/delete - delete character
+DELETE /character/{characterId} - delete character
 GET /movies - list movies
 GET /movies/{movieId} - show movie (with characters)
 
 ## Database Structure
 
 characters
-id
-name
-mass
-height
-gender
-picture (custom)
-movies
-id
-name
-movies_characters
-movie_id
-character_id
+
+-   id
+-   name
+-   mass
+-   height
+-   gender
+-   picture
+    movies
+-   id
+-   name
+    movies_characters
+-   movie_id
+-   character_id

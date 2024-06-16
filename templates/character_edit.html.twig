@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ character.name }}{% endblock %}
+
+{% block body %}
+<main>
+    <a class="back" href="{{ path('character_index') }}">Back</a>
+    <h2>Character: {{ character.name }}</h2>
+    
+    {{ form_start(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.mass) }}
+    {{ form_row(form.height) }}
+    {{ form_row(form.gender) }}
+
+    <div class="picture">
+        <img src="{{ character.pictureUrl }}" alt="{{ character.name }}">
+        <div>
+            {{ form_row(form.picture) }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Update
+    </button>
+
+    {% for message in app.flashes('success') %}
+        <div class="success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {{ form_end(form) }}
+
+
+    <form action="{{ path('character_delete', {characterId: character.id}) }}" method="delete">
+        <h3>Delete this character?</h3>
+        <button type="submit" class="btn btn-danger">
+            Delete
+        </button>
+    </form>
+</main>
+{% endblock %}
