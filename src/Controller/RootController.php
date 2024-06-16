@@ -37,6 +37,17 @@ class RootController extends AbstractController
         ]);
     }
 
+    #[Route('/characters/search', name: 'character_search')]
+    public function character_search(): Response
+    {
+        // TODO: Implement search functionality
+        $characters = $this->characterRepository->findAll();
+
+        return $this->render('character_index.html.twig', [
+            'characters' => $characters,
+        ]);
+    }
+
     #[Route('/characters/{characterId}/edit', name: 'character_edit')]
     public function edit_character(Request $request, $characterId): Response
     {

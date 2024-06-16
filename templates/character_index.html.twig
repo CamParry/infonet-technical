@@ -11,6 +11,11 @@
                 <a href="{{ path('character_edit', {characterId: character.id}) }}">
                     {{ character.name }}
                 </a>
+                <form class="list-delete" action="{{ path('character_delete', {characterId: character.id}) }}" method="delete">
+                    <button type="submit" class="btn btn-danger">
+                        Delete
+                    </button>
+                </form>
             </li>
         {% endfor %}
     </ul>
