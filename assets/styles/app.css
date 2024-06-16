@@ -59,6 +59,7 @@ main {
 	padding: 10px;
 	text-decoration: none;
 	color: black;
+	flex-grow: 1;
 }
 
 .list a:hover {

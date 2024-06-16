@@ -15,7 +15,9 @@
     {{ form_row(form.gender) }}
 
     <div class="picture">
-        <img src="{{ character.pictureUrl }}" alt="{{ character.name }}">
+        {% if character.pictureUrl %}
+            <img src="{{ character.pictureUrl }}" alt="{{ character.name }}">
+        {% endif %}
         <div>
             {{ form_row(form.picture) }}
         </div>

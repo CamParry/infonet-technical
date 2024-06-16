@@ -21,7 +21,7 @@ class CharacterFormType extends AbstractType
             ->add('height')
             ->add('gender')
             ->add('picture', FileType::class, [
-                'label' => 'Upload',
+                'label' => 'Upload Picture',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
