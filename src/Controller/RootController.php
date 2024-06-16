@@ -89,7 +89,7 @@ class RootController extends AbstractController
         ]);
     }
 
-    #[Route('/characters/{characterId}', name: 'character_delete', methods: ['DELETE'])]
+    #[Route('/characters/{characterId}/delete', name: 'character_delete', methods: ['POST'])]
     public function delete_character($characterId): Response
     {
         $character = $this->characterRepository->find($characterId);
