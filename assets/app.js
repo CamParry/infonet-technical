@@ -10,7 +10,7 @@ import "./styles/app.css";
 document.addEventListener("DOMContentLoaded", function () {
 	// set image src on file upload change
 	const fileUpload = document.querySelector('.picture input[type="file"]');
-	fileUpload.addEventListener("change", function () {
+	fileUpload?.addEventListener("change", function () {
 		const image = document.querySelector(".picture img");
 		const reader = new FileReader();
 		reader.onload = function (e) {
