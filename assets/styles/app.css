@@ -88,6 +88,19 @@ main {
 	padding: 0.25rem;
 }
 
+.form-inline {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0;
+	border: none;
+}
+
+.form-inline input[type="text"] {
+	padding: 0.5rem;
+	margin-bottom: 0;
+}
+
 form {
 	border: 1px solid #ccc;
 	max-width: 24rem;

@@ -5,6 +5,17 @@
 {% block body %}
 <main>
     <h2>Characters</h2>
+    <form method="get" class="form-inline">
+        <input class="search" type="text" id="search" name="search" placeholder="Search..." required/>
+        <button type="submit" class="btn btn-primary">
+            Search
+        </button>
+        {% if search %}
+            <a href="{{ path('character_index') }}" class="btn btn-secondary">
+                Clear
+            </a>
+        {% endif %}
+    </form>
     <ul class="list">
         {% for character in characters %}
             <li>

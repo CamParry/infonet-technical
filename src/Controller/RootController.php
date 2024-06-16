@@ -30,21 +30,19 @@ class RootController extends AbstractController
     #[Route('/', name: 'character_index')]
     public function index(): Response
     {
-        $characters = $this->characterRepository->findAll();
+        $search = isset($_GET['search']) ? htmlspecialchars($_GET['search'] ?? '') : false;
+
+        $characters = [];
+
+        if ($search) {
+            $characters = $this->characterRepository->search($search);;
+        } else {
+            $characters = $this->characterRepository->findAll();
+        }
 
         return $this->render('character_index.html.twig', [
             'characters' => $characters,
-        ]);
-    }
-
-    #[Route('/characters/search', name: 'character_search')]
-    public function character_search(): Response
-    {
-        // TODO: Implement search functionality
-        $characters = $this->characterRepository->findAll();
-
-        return $this->render('character_index.html.twig', [
-            'characters' => $characters,
+            'search' => $search,
         ]);
     }
 
