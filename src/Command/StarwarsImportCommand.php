@@ -33,7 +33,7 @@ class StarwarsImportCommand extends Command
 
         try {
             $swapiService = new SwapiService($this->em, $this->client);
-            $swapiService->import($this->em, $this->client);
+            $swapiService->import();
 
             $io->success('Successfully imported data from swapi.dev');
             return Command::SUCCESS;
