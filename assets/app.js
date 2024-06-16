@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		.querySelectorAll('.picture input[type="file"]')
 		.forEach(function (fileUpload) {
 			fileUpload.addEventListener("change", function () {
-				console.log(fileUpload.files[0]);
 				const image = document.querySelector(".picture img");
 				const reader = new FileReader();
 				reader.onload = function (e) {
