@@ -15,7 +15,7 @@ Using [the swapi API](https://swapi.dev/) download 30 characters and all movies
 
 -   GET / - list characters (with search and delete functionality)
 -   GET /character/{characterId}/edit - edit character
--   DELETE /character/{characterId} - delete character
+-   POST /character/{characterId}/delete - delete character
 -   GET /movies - list movies
 -   GET /movies/{movieId} - show movie (with characters)
 
